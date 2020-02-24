@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from "../App2";
 import PageOne from "../views/PageOne";
 import PageTwo from "../views/PageTwo";
 import PageThree from "../views/PageThree";
 import PageFour from "../views/PageFour";
+import Index from "../views/Index";
 
 Vue.use(VueRouter)
 
@@ -12,7 +12,8 @@ const routes = [
   {
     path:"/",
     name:"导航1",
-    component:App,
+    component:Index,
+    redirect:"/pageOne",
     children:[
       {
         path: "/pageOne",
@@ -29,7 +30,7 @@ const routes = [
   {
     path:"/navigation",
     name:"导航2",
-    component:App,
+    component:Index,
     children:[
       {
         path: "/pageThree",
